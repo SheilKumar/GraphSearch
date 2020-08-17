@@ -49,10 +49,14 @@
 int GridGraph::countEdges() const {
   int numEdges = 0;
 
+  for (std::pair<IntPair, GridGraph::NeighborSet> element: adjacencyMap) {
+    numEdges += element.second.size();
+  }
+
   // =======================================================================
   // TODO: Your code here!
   // =======================================================================
-
+  numEdges = numEdges/2;
   return numEdges;
 }
 
